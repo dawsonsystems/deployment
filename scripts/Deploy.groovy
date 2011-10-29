@@ -4,6 +4,8 @@ includeTargets << new File("${basedir}/scripts/_DeployCommon.groovy")
 target(default: "Deploy a build live") {
   depends(password, passphrase)
 
+  promptForValue("targetWar")
+  promptForValue("deployWar")
   //for each tomcat in turn
   deployServers.each { tomcat ->
     println "Deploying to ${tomcat.name}"
