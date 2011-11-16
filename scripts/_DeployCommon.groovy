@@ -107,7 +107,7 @@ doDeploy = { targetTomcat ->
 
   copy("src/system/deployment/restartTomcatAndWait.bash", "/home/david/restartTomcat.sh")
 
-  println "Copying war file to demo server"
+  println "Copying war file to server"
 
   copy("${deployWar}", "${targetWar}")
 
