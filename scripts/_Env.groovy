@@ -17,9 +17,9 @@ tomcat = [
         host(name: "cms1", external: "cms1.dawsonsystems.com", internal: "cms1.dawsonsystems.com"),
 ]
 
-deployServers = tomcat.findAll { name != "demo" }
+deployServers = tomcat.findAll { it.name != "demo" }
 
-tomcatServer =  tomcat.findAll { it.name == name}
+tomcatServer =  tomcat
 
 tomcatServerByIp = { String ip ->
   return tomcat.find { it.internal == ip}
