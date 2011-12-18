@@ -13,10 +13,11 @@ nginx = [
 ]
 
 tomcat = [
-        host(name: "mycenae", external: "mycenae", internal: "mycenae"),
+        host(name: "demo", external: "mycenae", internal: "mycenae"),
+        host(name: "cms1", external: "cms1.dawsonsystems.com", internal: "cms1.dawsonsystems.com"),
 ]
 
-deployServers = tomcat
+deployServers = tomcat.findAll { name != "demo" }
 
 tomcatServer = { String name ->
   return tomcat.find { it.name == name}
