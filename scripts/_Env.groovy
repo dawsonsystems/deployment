@@ -19,9 +19,8 @@ tomcat = [
 
 deployServers = tomcat.findAll { name != "demo" }
 
-tomcatServer = { String name ->
-  return tomcat.find { it.name == name}
-}
+tomcatServer =  tomcat.findAll { it.name == name}
+
 tomcatServerByIp = { String ip ->
   return tomcat.find { it.internal == ip}
 }
